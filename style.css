@@ -1,0 +1,597 @@
+:root {
+    --verde-musgo: #556B2F; 
+    --creme-claro: #F5F5DC; 
+    --texto-escuro: #3a3a3a; 
+    --dourado-suave: #DAA520; 
+    --branco: #ffffff;
+}
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+html { 
+    scroll-behavior: smooth; 
+}
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background-color: var(--creme-claro); 
+    color: var(--texto-escuro); 
+    line-height: 1.6; 
+    text-align: center; 
+}
+h1, h2, h3 { 
+    font-family: 'Cormorant Garamond', serif; 
+    font-weight: 700; 
+    color: var(--verde-musgo); 
+}
+.container { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 4rem 2rem; 
+}
+.fade-in { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+.fade-in.visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+header { 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    left: 0; 
+    background-color: rgba(255, 255, 255, 0.9); 
+    backdrop-filter: blur(10px); 
+    padding: 1rem 0; 
+    z-index: 1000; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+header nav a { 
+    font-family: 'Montserrat', sans-serif; 
+    text-decoration: none; 
+    color: var(--verde-musgo); 
+    margin: 0 15px; 
+    font-weight: 600; 
+    transition: color 0.3s; 
+}
+header nav a:hover { 
+    color: var(--dourado-suave); 
+}
+#convite {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('design-de-convite-de-casamento-verde-com-floral-e-aquarela_118960-4629.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    min-height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: var(--branco); 
+    flex-direction: column;
+}
+#convite .convite-texto { 
+    padding: 2rem; 
+    background-color: rgba(0,0,0,0.2); 
+    border-radius: 10px; 
+}
+#convite h1 { 
+    font-size: 4rem; 
+    color: var(--branco); 
+    font-weight: 700; 
+}
+#convite p { 
+    font-size: 1.2rem; 
+    margin-top: 1rem; 
+    font-weight: 300; 
+}
+#countdown { 
+    display: flex; 
+    justify-content: center; 
+    margin-top: 2rem; 
+}
+.countdown-item { 
+    margin: 0 15px; 
+}
+.countdown-item span { 
+    display: block; 
+    font-size: 2.5rem; 
+    font-family: 'Cormorant Garamond', serif; 
+}
+.countdown-item p { 
+    font-size: 0.9rem; 
+    margin: 0; 
+    text-transform: uppercase; 
+}
+section { 
+    background-color: var(--branco); 
+}
+section:nth-child(even) { 
+    background-color: var(--creme-claro); 
+}
+section h2 { 
+    font-size: 2.5rem; 
+    margin-bottom: 2rem; 
+    position: relative; 
+    display: inline-block; 
+}
+section h2 .fa-solid { 
+    margin-right: 10px; 
+    font-size: 2rem; 
+}
+section h2::after { 
+    content: ''; 
+    display: block; 
+    width: 50px; 
+    height: 3px; 
+    background-color: var(--dourado-suave); 
+    margin: 10px auto 0; 
+}
+#cerimonia p, #festa p, #mensagem p { 
+    font-size: 1.1rem; 
+    margin-bottom: 1rem; 
+}
+.map-container { 
+    position: relative; 
+    overflow: hidden; 
+    padding-top: 56.25%; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    margin-top: 2rem; 
+}
+.map-container iframe { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    border: 0; 
+}
+.timeline { 
+    position: relative; 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+.timeline::after { 
+    content: ''; 
+    position: absolute; 
+    width: 4px; 
+    background-color: var(--dourado-suave); 
+    top: 0; 
+    bottom: 0; 
+    left: 50%; 
+    margin-left: -2px; 
+}
+.timeline-item { 
+    padding: 10px 40px; 
+    position: relative; 
+    width: 50%; 
+}
+.timeline-item.left { 
+    left: 0; 
+    text-align: right; 
+}
+.timeline-item.right { 
+    left: 50%; 
+    text-align: left; 
+}
+.timeline-item::after { 
+    content: ''; 
+    position: absolute; 
+    width: 20px; 
+    height: 20px; 
+    right: -2px; 
+    background-color: var(--branco); 
+    border: 4px solid var(--dourado-suave); 
+    top: 15px; 
+    border-radius: 50%; 
+    z-index: 1; 
+}
+.timeline-item.right::after { 
+    left: -2px; 
+}
+.timeline-content { 
+    padding: 20px; 
+    background-color: var(--creme-claro); 
+    border-radius: 6px; 
+}
+.timeline-content h3 { 
+    margin-bottom: 5px; 
+}
+#presentes p { 
+    max-width: 600px; 
+    margin: 0 auto 2rem auto; 
+}
+.pix-container { 
+    margin-top: 2rem; 
+    padding: 1.5rem; 
+    border: 1px dashed var(--verde-musgo); 
+    border-radius: 8px; 
+    display: inline-block; 
+}
+.btn { 
+    display: inline-block; 
+    background-color: var(--verde-musgo); 
+    color: var(--branco); 
+    padding: 12px 25px; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: background-color 0.3s, transform 0.2s; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 1rem; 
+}
+.btn:hover { 
+    background-color: var(--dourado-suave); 
+    transform: scale(1.05); 
+}
+.mimos-list { 
+    list-style: none; 
+    padding: 0; 
+    margin-top: 1.5rem; 
+    max-width: 500px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: left;
+}
+.mimos-list li { 
+    margin-bottom: 10px; 
+    font-size: 1.1rem; 
+}
+.mimos-list .fa-solid { 
+    color: var(--verde-musgo); 
+    margin-right: 10px; 
+}
+.gallery-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 15px; 
+    margin-top: 2rem; 
+}
+.gallery-grid img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    transition: transform 0.3s ease; 
+}
+.gallery-grid img:hover { 
+    transform: scale(1.05); 
+}
+.info-container { 
+    display: flex; 
+    justify-content: space-around; 
+    gap: 2rem; 
+    margin: 3rem 0; 
+    text-align: left; 
+}
+.info-box { 
+    background-color: var(--creme-claro); 
+    padding: 1.5rem; 
+    border-radius: 8px; 
+    border-left: 5px solid var(--verde-musgo); 
+    width: 50%; 
+}
+.info-box h3 { 
+    font-size: 1.5rem; 
+    margin-bottom: 1rem; 
+}
+.info-box h3 .fa-solid { 
+    margin-right: 10px; 
+    color: var(--dourado-suave); 
+}
+.color-palette { 
+    display: flex; 
+    justify-content: center; 
+    gap: 10px; 
+    margin-top: 1rem; 
+}
+.color-dot { 
+    width: 35px; 
+    height: 35px; 
+    border-radius: 50%; 
+    border: 2px solid var(--branco); 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+.message-box { 
+    max-width: 600px; 
+    margin: 2rem auto 0 auto; 
+    padding: 2rem 0; 
+    border-top: 2px solid var(--dourado-suave); 
+    border-bottom: 2px solid var(--dourado-suave); 
+}
+.message-box p { 
+    font-style: italic; 
+    font-size: 1.2rem; 
+    line-height: 1.8; 
+}
+footer { 
+    padding: 2rem; 
+    background-color: var(--verde-musgo); 
+    color: var(--creme-claro); 
+}
+.form-card {
+    background-color: var(--branco);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    margin-top: 2rem;
+    text-align: left;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--verde-musgo);
+    box-shadow: 0 0 5px rgba(85, 107, 47, 0.3);
+    outline: none;
+}
+.form-group textarea {
+    resize: vertical;
+}
+.radio-button-group {
+    display: flex;
+    gap: 10px;
+}
+.radio-button-group input[type="radio"] {
+    display: none;
+}
+.radio-button-group .radio-button {
+    flex-grow: 1;
+    text-align: center;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+.radio-button-group input[type="radio"] + .radio-button {
+    background-color: #f9f9f9;
+    color: #777;
+}
+.radio-button-group input[type="radio"]:checked + .radio-button {
+    background-color: var(--verde-musgo);
+    border-color: var(--verde-musgo);
+    color: var(--branco);
+    box-shadow: 0 2px 5px rgba(85, 107, 47, 0.4);
+}
+#conditional-fields {
+    transition: all 0.4s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #eee;
+}
+form .btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+#success-message {
+    padding: 2rem;
+    border: 2px dashed var(--dourado-suave);
+    border-radius: 10px;
+    text-align: center;
+}
+#success-message h3 {
+    font-size: 2rem;
+    color: var(--verde-musgo);
+    margin: 1rem 0;
+}
+@media (max-width: 768px) {
+    #convite h1 { font-size: 3rem; }
+    section h2 { font-size: 2rem; }
+    header nav a { margin: 0 8px; font-size: 0.9rem; }
+    #convite { background-attachment: scroll; }
+    .timeline::after { left: 20px; }
+    .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; }
+    .timeline-item.left, .timeline-item.right { left: 0; text-align: left; }
+    .timeline-item::after { left: 10px; }
+    .info-container { flex-direction: column; }
+    .info-box { width: 100%; }
+}
+
+/* === ESTILOS DA LISTA DE PRESENTES === */
+.gift-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    margin-top: 3rem;
+}
+
+.gift-gallerry {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    margin-top: 3rem;
+}
+
+.gift-card {
+    background-color: var(--branco);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    margin: 5px;
+}
+.gift-cardd {
+    background-color: var(--branco);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    margin: 5px;
+}
+.gift-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+.gift-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.gift-card .gift-info {
+    padding: 1.5rem;
+}
+.gift-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+.gift-card p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--texto-escuro);
+    margin-bottom: 1.5rem;
+}
+.btn-presentear {
+    width: 100%;
+}
+
+/* style.css */
+
+/* --- ESTILOS PARA PAGINAÇÃO DE PRESENTES --- */
+.pagination {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.page-btn {
+    background-color: #f0f0f0;
+    color: var(--verde-musgo);
+    border: 1px solid var(--verde-musgo);
+}
+
+.page-btn.active {
+    background-color: var(--verde-musgo);
+    color: var(--branco);
+}
+
+.gift-page {
+    display: none; /* Esconde todas as páginas por padrão */
+}
+
+.gift-page.active {
+    display: block; /* Mostra apenas a página ativa */
+}
+
+/* === ESTILOS DO MODAL DE PRESENTE === */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    background-color: var(--branco);
+    padding: 2.5rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+.modal-overlay.visible .modal-content {
+    transform: scale(1);
+}
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: #aaa;
+    cursor: pointer;
+}
+.modal-content img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+.modal-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.modal-content p {
+    font-size: 1.1rem;
+}
+.modal-content hr {
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+    margin: 1.5rem 0;
+}
+#gift-confirmation-form {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+/* Adicione este código ao final do seu style.css */
+
+.category-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 4rem; /* Dá um espaço antes de cada nova categoria */
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.category-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--dourado-suave);
+    margin: 10px auto 0;
+}
